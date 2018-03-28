@@ -1,0 +1,17 @@
+body {
+  background-image: url(homepage3.jpg);
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  color: white;
+}
+
+.navbar {
+  opacity: 0.5;
+  color: white;
+}
+
+.btn {
+  opacity: 0.9;
+}

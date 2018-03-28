@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='home.css') }}">
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+
+  <div class="jumbotron">
+  <h1 class="display-3">Set out.</h1>
+  <p class="lead">Travl is the easy way to plan and organize solo travel.</p>
+  <hr class="my-4">
+  <p class="lead">Focus on the journey, and we'll sweat the small stuff.</p>
+  <br>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/register" role="button">Get Started</a>
+  </p>
+  </div>
+</div>
+
+</div>
+
+
+{% endblock %}

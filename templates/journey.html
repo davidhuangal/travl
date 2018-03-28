@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='journey.css') }}">
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <h1 class="display-4">{{journey.title}}</h1>
+  <small>{{journey.description}}</small>
+  <hr>
+  <div class="btn-group">
+  <a href="/edit-journey/{{session.username}}/{{journey.id}}"><button class="btn btn-sm btn-primary">Edit</button></a>
+  <form action="{{url_for('delete_article', id=journey.id, username=session.username)}}" method="POST">
+    <button class="btn btn-sm btn-danger">Delete</button>
+  </form>
+  </div>
+  <div class="list-group">
+
+    <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Season</h5>
+      </div>
+      <p class="mb-1">{{journey.season.capitalize()}}</p>
+    </div>
+
+    <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Genre</h5>
+      </div>
+      <p class="mb-1">{{journey.genre.capitalize()}}</p>
+    </div>
+
+    <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Budget</h5>
+      </div>
+      <p class="mb-1">${{journey.budget}}</p>
+    </div>
+
+    <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Location</h5>
+      </div>
+      <p class="mb-1">{{journey.location.capitalize()}}</p>
+    </div>
+
+    <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Days</h5>
+      </div>
+      <p class="mb-1">{{journey.length_in_days}}</p>
+    </div>
+
+    <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Completed Status</h5>
+      </div>
+      <p class="mb-1">{{journey.completed_status.capitalize()}}</p>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

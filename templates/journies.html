@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='journies.css') }}">
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <h1 class="display-4">My Journies</h1>
+  {% if msg %}
+  <div class="alert alert-primary" role="alert">
+  {{msg}} Create one <a href="/new-journey" class="alert-link">here.</a>
+  </div>
+  {% else %}
+  <ul class="list-group">
+    {% for journey in journies %}
+      <li class="list-group-item"><a href="journey/{{username}}/{{journey.id}}">{{journey.title}}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+</div>
+{% endblock %}

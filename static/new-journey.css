@@ -1,0 +1,22 @@
+body {
+  background-image: url(newjourney1.jpg);
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  color: black;
+}
+
+.navbar {
+  opacity: 0.5;
+  color: white;
+}
+
+.btn {
+  opacity: 0.9;
+}
+
+.list-group-item {
+  color: black;
+  background: rgba(244,235,252, 0.9);
+}
